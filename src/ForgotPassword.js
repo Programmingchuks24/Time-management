@@ -4,7 +4,7 @@ function ForgotPassword() {
   return (
     <div>
 
-        
+        <p>Forgotten passowrd</p>
     </div>
   )
 }

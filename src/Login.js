@@ -1,7 +1,58 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Link,useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
+
 
 function Login() {
+
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = () => {
+
+
+        if(email === "" || password === "") {
+
+            toast.error("Please fill all the fields", {
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:true,
+            });
+
+            return;
+        }
+
+        else {
+
+            toast.success("Login Success", {
+                autoClose:2000,
+                closeOnClick:true,
+                pauseOnHover:true,
+            });
+
+            setTimeout(() => {
+                navigate("/signup")
+            }, 3000);
+
+        }
+
+        
+        
+
+    }
+
+    const textChange = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const Passwordchange = (e) => {
+
+        setPassword(e.target.value);
+    }
+
   return (
     <>
         <div className = "flex flex-col gap-5 items-center">
@@ -11,12 +62,12 @@ function Login() {
             bg-gray-200 rounded-2xl text-center flex flex-col gap-4 pt-6 shadow-lg shadow-gray-500 sm:w-[400px] sm:ml-2 ">
 
                 <p className="text-xl">Email address or Phone Number</p>
-                <input className = "border border-slate-600 h-16 shadow-md shadow-gray-700 rounded-3xl" type="text"/>
+                <input value={email} onChange={textChange}  className = "border border-slate-600 h-16 shadow-md shadow-gray-700 rounded-3xl" type="text"/>
 
                 <p>Password</p>
-                <input className = "border border-slate-600 h-16 shadow-md shadow-gray-700 rounded-3xl" type="password"/>
+                <input value = {password} onChange={Passwordchange} className = "border border-slate-600 h-16 shadow-md shadow-gray-700 rounded-3xl" type="password"/>
 
-                <button className = "border border-slate-600 h-16 rounded-3xl shadow-md shadow-gray-700 mt-5">Log In</button>
+                <button className = "border border-slate-600 h-16 rounded-3xl shadow-md shadow-gray-700 mt-5" onClick = {handleSubmit}>Log In</button>
 
                 <p>Forgotten Password?</p>
             </div>
@@ -26,6 +77,8 @@ function Login() {
             <p>Don't have an account</p>
             <Link to = "/signup"><p className="text-blue-200">SignUp instead</p></Link> 
         </div>
+
+        <ToastContainer/>
         
     </>
     

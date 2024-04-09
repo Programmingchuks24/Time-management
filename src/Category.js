@@ -4,7 +4,7 @@ function Category() {
   return (
     <div>
 
-        
+        <p>category</p>
     </div>
   )
 }
