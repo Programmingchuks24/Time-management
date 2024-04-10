@@ -34,7 +34,7 @@ function Login() {
             });
 
             setTimeout(() => {
-                navigate("/signup")
+                navigate("/category")
             }, 3000);
 
         }
