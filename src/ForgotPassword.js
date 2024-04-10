@@ -1,15 +1,47 @@
 import { useEffect, useState } from "react"
 import React from 'react'
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function ForgotPassword() {
 
     const [statusquo, setStatusquo] = useState("");
 
+    const navigate = useNavigate();
 
     const handleClick = () => {
 
-        toast.success
+
+        if (statusquo === "") {
+
+            toast.error("Error, provide details", {
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+            return;
+
+
+        }
+
+        toast.success("Sent Successfuly", {
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+
+        setTimeout(()=> {
+
+            navigate("/")
+
+        }, 4000)
     }
 
 
@@ -20,11 +52,6 @@ function ForgotPassword() {
         
     }
 
-    useEffect(() => {
-            
-        console.log(statusquo);
-
-    }, [statusquo]);
   return (
     <div className="flex flex-col items-center mt-20 gap-5">
 
