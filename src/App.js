@@ -5,6 +5,7 @@ import Signup from './Signup';
 import Category from './Category';
 import ForgotPassword from './ForgotPassword';
 import { AnimatePresence } from 'framer-motion';
+import Reminder from "./Reminder";
 
 function App() {
   return (
@@ -21,8 +22,7 @@ function App() {
           <Route path = "/signup" element = {<Signup/>} keys = "/signup"/>
           <Route path = "/category" element = {<Category/>} keys = "/category"/>
           <Route path = "/forgot" element = {<ForgotPassword/>} keys = "/forgot"/>
-          
-          
+          <Route path = "/reminder" element = {<Reminder/>} keys = "/reminder"/>
         </Routes>
 
         </AnimatePresence>

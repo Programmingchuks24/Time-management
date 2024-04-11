@@ -1,12 +1,25 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 
 function Category() {
 
-  const RevertToReminder = () => {
+  const navigate = useNavigate();
 
-    console.log("Revert to Reminder");
+  const RevertToReminder_work = () => {
+
+    navigate("/reminder");
+    
+
+  }
+
+
+  const RevertToReminder_school = () => {
+
+
+    navigate("/reminder")
+    
 
   }
 
@@ -19,7 +32,7 @@ function Category() {
     <motion.div 
     initial={{opacity:0, y:-100}}
     animate={{opacity:1, y:0}}
-    transition={{duration:2.0}}
+    transition={{duration:0.5}}
     exit={{opacity:0, y:-100}}
     className="flex flex-col gap-5 items-center pt-5">
 
@@ -27,8 +40,8 @@ function Category() {
 
 
       <div className="border border-slate-600 h-[35rem] w-[25rem] flex flex-col justify-evenly items-center text-center rounded-3xl">
-        <p className="border border-slate-600 w-[20rem] h-14 shadow-md shadow-gray-700 rounded-3xl pt-3 hover:shadow-none cursor-pointer" onClick={RevertToReminder}>School</p>
-        <p className="border border-slate-600 w-[20rem] h-14 shadow-md shadow-gray-700 rounded-3xl pt-3 hover:shadow-none cursor-pointer" onClick={RevertToReminder}>Work</p>
+        <p className="border border-slate-600 w-[20rem] h-14 shadow-md shadow-gray-700 rounded-3xl pt-3 hover:shadow-none cursor-pointer" onClick={RevertToReminder_school}>School</p>
+        <p className="border border-slate-600 w-[20rem] h-14 shadow-md shadow-gray-700 rounded-3xl pt-3 hover:shadow-none cursor-pointer" onClick={RevertToReminder_work}>Work</p>
         <p className="border border-slate-600 w-[20rem] h-14 shadow-md shadow-gray-700 rounded-3xl pt-3 hover:shadow-none cursor-pointer" onClick={NewCategroy}>Add New Category</p>
       </div>
       
