@@ -9,7 +9,7 @@ function Category() {
 
   const RevertToReminder_work = () => {
 
-    navigate("/reminder");
+    navigate("/reminderwork");
     
 
   }
@@ -18,7 +18,7 @@ function Category() {
   const RevertToReminder_school = () => {
 
 
-    navigate("/reminder")
+    navigate("/reminderschool")
     
 
   }
