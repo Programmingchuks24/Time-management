@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Routes,  Route} from 'react-router-dom';
 import Signup from './Signup';
 import Category from './Category';
 import ForgotPassword from './ForgotPassword';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   return (
@@ -12,18 +13,19 @@ function App() {
 
       <div>
 
-
-      
+        <AnimatePresence mode='wait'>
         <Routes>
 
           
-          <Route path = "/" element = {<Login/>}/>
-          <Route path = "/signup" element = {<Signup/>}/>
-          <Route path = "/category" element = {<Category/>}/>
-          <Route path = "/forgot" element = {<ForgotPassword/>}/>
+          <Route path = "/" element = {<Login/>} keys = "/"/>
+          <Route path = "/signup" element = {<Signup/>} keys = "/signup"/>
+          <Route path = "/category" element = {<Category/>} keys = "/category"/>
+          <Route path = "/forgot" element = {<ForgotPassword/>} keys = "/forgot"/>
           
           
         </Routes>
+
+        </AnimatePresence>
 
       </div>
   

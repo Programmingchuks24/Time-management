@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
+import {motion} from 'framer-motion';
 
 
 function Login() {
@@ -54,7 +55,12 @@ function Login() {
     }
 
   return (
-    <>
+    <motion.div
+    initial = {{opacity:0, y:100}}
+    animate = {{opacity:1, y:0}}
+    transition={{duration:0.5, ease:"easeOut"}}
+    exit = {{opacity:0, y:100, transition:{duration:2.0}}}
+    >
         <div className = "flex flex-col gap-5 items-center">
             <h1 className = " italic text-3xl font-bold text-center">Login</h1>
 
@@ -80,7 +86,7 @@ function Login() {
 
         <ToastContainer/>
         
-    </>
+    </motion.div>
     
   )
 }
