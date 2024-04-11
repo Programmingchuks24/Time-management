@@ -6,6 +6,8 @@ import Category from './Category';
 import ForgotPassword from './ForgotPassword';
 import { AnimatePresence } from 'framer-motion';
 import Reminder from "./Reminder";
+import ReminderWork from './ReminderWork';
+import ReminderSchool from './ReminderSchool';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path = "/category" element = {<Category/>} keys = "/category"/>
           <Route path = "/forgot" element = {<ForgotPassword/>} keys = "/forgot"/>
           <Route path = "/reminder" element = {<Reminder/>} keys = "/reminder"/>
+          <Route path = "/reminderwork" element = {<ReminderWork/>} keys = "/reminderwork"/>
+          <Route path = "/reminderschool" element = {<ReminderSchool/>} keys = "/reminderschool"/>
         </Routes>
 
         </AnimatePresence>
