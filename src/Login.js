@@ -64,7 +64,7 @@ function Login() {
         <div className = "flex flex-col gap-5 items-center">
             <h1 className = " italic text-3xl font-bold text-center">Login</h1>
 
-            <div className="border border-slate-800 w-[370px] h-[400px] lg:w-[500px]
+            <div className="border border-slate-800 w-[350px] h-[400px] lg:w-[500px]
             bg-gray-200 rounded-2xl text-center flex flex-col gap-4 pt-6 shadow-lg shadow-gray-500">
 
                 <p className="text-xl">Email address or Phone Number</p>
